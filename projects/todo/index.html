@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>To-Do App</title>
+<style>
+  /* Reset */
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    font-family: 'Poppins', sans-serif;
+    background: linear-gradient(135deg, #74ABE2, #5563DE);
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .todo-container {
+    background: white;
+    width: 350px;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+    padding: 30px 25px;
+    text-align: center;
+    animation: fadeIn 0.8s ease;
+  }
+
+  @keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  h1 {
+    margin-bottom: 20px;
+    color: #333;
+    letter-spacing: 1px;
+  }
+
+  .input-group {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+  }
+
+  input {
+    padding: 10px 15px;
+    width: 70%;
+    border: 2px solid #5563DE;
+    border-radius: 8px 0 0 8px;
+    outline: none;
+    font-size: 14px;
+  }
+
+  button.add-btn {
+    padding: 10px 20px;
+    border: none;
+    background: #5563DE;
+    color: white;
+    border-radius: 0 8px 8px 0;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background 0.3s;
+  }
+
+  button.add-btn:hover {
+    background: #3f4dc9;
+  }
+
+  ul {
+    list-style: none;
+    margin-top: 10px;
+    max-height: 250px;
+    overflow-y: auto;
+    padding-right: 5px;
+  }
+
+  li {
+    background: #f7f7f7;
+    margin-bottom: 10px;
+    padding: 10px 12px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-radius: 8px;
+    transition: background 0.3s, transform 0.2s;
+  }
+
+  li:hover {
+    background: #f0f0f0;
+    transform: scale(1.02);
+  }
+
+  li.done span {
+    text-decoration: line-through;
+    color: #999;
+  }
+
+  .delete-btn {
+    background: none;
+    border: none;
+    color: #ff4b5c;
+    font-weight: bold;
+    cursor: pointer;
+    font-size: 16px;
+    transition: transform 0.2s;
+  }
+
+  .delete-btn:hover {
+    transform: scale(1.2);
+  }
+
+  /* Scrollbar */
+  ul::-webkit-scrollbar {
+    width: 5px;
+  }
+  ul::-webkit-scrollbar-thumb {
+    background: #bbb;
+    border-radius: 5px;
+  }
+</style>
+</head>
+
+<body>
+  <div class="todo-container">
+    <h1>My To-Do List</h1>
+    <div class="input-group">
+      <input id="task" placeholder="Enter a task...">
+      <button class="add-btn" onclick="addTask()">Add</button>
+    </div>
+    <ul id="list"></ul>
+  </div>
+
+<script>
+  const list = document.getElementById('list');
+  const input = document.getElementById('task');
+
+  function save() {
+    localStorage.setItem('tasks', list.innerHTML);
+  }
+
+  function load() {
+    list.innerHTML = localStorage.getItem('tasks') || '';
+  }
+
+  function addTask() {
+    const taskValue = input.value.trim();
+    if (taskValue === '') return;
+
+    const li = document.createElement('li');
+    li.innerHTML = `
+      <span onclick="toggleDone(this)">${taskValue}</span>
+      <button class="delete-btn" onclick="deleteTask(this)">✕</button>
+    `;
+
+    list.appendChild(li);
+    input.value = '';
+    save();
+  }
+
+  function toggleDone(el) {
+    el.parentElement.classList.toggle('done');
+    save();
+  }
+
+  function deleteTask(btn) {
+    btn.parentElement.remove();
+    save();
+  }
+
+  // Enter key support
+  input.addEventListener('keydown', e => {
+    if (e.key === 'Enter') addTask();
+  });
+
+  load();
+</script>
+</body>
+</html>

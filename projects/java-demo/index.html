@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Java Demo Project</title>
+<style>
+  body {
+    font-family: 'Consolas', 'Courier New', monospace;
+    background: radial-gradient(circle at top left, #000 0%, #111 100%);
+    color: #0f0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 40px;
+    height: 100vh;
+  }
+
+  h1 {
+    color: #0f0;
+    text-shadow: 0 0 10px #0f0;
+    margin-bottom: 20px;
+  }
+
+  p {
+    color: #9f9;
+    margin-bottom: 15px;
+    text-align: center;
+    max-width: 600px;
+  }
+
+  pre {
+    background: rgba(0,0,0,0.85);
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 15px rgba(0,255,0,0.2);
+    width: 90%;
+    max-width: 600px;
+    position: relative;
+    overflow-x: auto;
+    border-left: 4px solid #0f0;
+  }
+
+  .terminal-header {
+    position: absolute;
+    top: 8px;
+    left: 12px;
+    font-size: 12px;
+    color: #0f0;
+    opacity: 0.7;
+  }
+
+  .typing {
+    display: inline-block;
+    border-right: 2px solid #0f0;
+    animation: blink 0.8s infinite;
+  }
+
+  @keyframes blink {
+    0%, 100% { border-color: transparent; }
+    50% { border-color: #0f0; }
+  }
+
+  button {
+    background: #0f0;
+    color: #000;
+    border: none;
+    padding: 10px 20px;
+    margin-top: 25px;
+    border-radius: 5px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s;
+  }
+
+  button:hover {
+    background: #9f9;
+    transform: scale(1.05);
+  }
+</style>
+</head>
+<body>
+  <h1>☕ Java Demo Project</h1>
+  <p>Below is a simple Java console app. You can copy and run it in your IDE:</p>
+
+  <pre id="code">
+<span class="terminal-header">C:\Projects\JavaDemo&gt;</span>
+<span id="text"></span><span class="typing"></span>
+  </pre>
+
+  <button onclick="copyCode()">Copy Code</button>
+  <p>Run this using <b>javac HelloWorld.java</b> then <b>java HelloWorld</b>.</p>
+
+<script>
+  const code = `public class HelloWorld {
+    public static void main(String[] args) {
+        System.out.println("Hello from Tran Tien's Java Portfolio!");
+    }
+}`;
+
+  const textElement = document.getElementById('text');
+  let index = 0;
+
+  function typeEffect() {
+    if (index < code.length) {
+      textElement.innerHTML += code[index] === '\n' ? '<br>' : code[index];
+      index++;
+      setTimeout(typeEffect, 40);
+    }
+  }
+
+  function copyCode() {
+    navigator.clipboard.writeText(code);
+    alert("✅ Java code copied to clipboard!");
+  }
+
+  // Tự động chạy hiệu ứng gõ code
+  window.onload = typeEffect;
+</script>
+</body>
+</html>
