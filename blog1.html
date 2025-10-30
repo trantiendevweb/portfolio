@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="Bài viết chi tiết về nền tảng Java, dành cho người mới bắt đầu học lập trình.">
+    <meta name="author" content="Trần Tiến">
+    <title>Bắt đầu với Java | Trần Tiến</title>
+    <link rel="stylesheet" href="assets/vendors/themify-icons/css/themify-icons.css">
+    <link rel="stylesheet" href="assets/css/meyawo.css">
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="custom-navbar" data-spy="affix" data-offset-top="20">
+        <div class="container">
+            <a class="logo" href="index.html">Trần Tiến</a>
+            <ul class="nav">
+                <li class="item"><a class="link" href="index.html#home">Trang chủ</a></li>
+                <li class="item"><a class="link" href="index.html#portfolio">Dự án</a></li>
+                <li class="item"><a class="link" href="index.html#blog">Blog</a></li>
+            </ul>
+            <a href="javascript:void(0)" id="nav-toggle" class="hamburger hamburger--elastic">
+                <div class="hamburger-box"><div class="hamburger-inner"></div></div>
+            </a>
+        </div>
+    </nav>
+
+    <!-- Blog Content -->
+    <section class="section">
+        <div class="container">
+            <h1 class="section-title text-center">Bắt đầu với Java</h1>
+            <p class="text-center">
+                <a href="#">Tác giả: Trần Tiến</a> | 
+                <i class="ti-heart text-danger"></i> 98 | 
+                <i class="ti-comment"></i> 21
+            </p>
+            <div class="text-center">
+                <img src="assets/imgs/blog1.png" class="blog-card-img" alt="Java Basics" style="max-width: 100%; height: auto;">
+            </div>
+
+            <div class="blog-content" style="text-align: left; margin-top: 20px;">
+                <p><strong>Java</strong> là một trong những ngôn ngữ lập trình mạnh mẽ, ổn định và phổ biến nhất thế giới. Kể từ khi ra mắt năm 1995 bởi <em>Sun Microsystems</em> (sau này được Oracle mua lại), Java đã trở thành nền tảng chủ lực cho hàng triệu ứng dụng – từ website, phần mềm doanh nghiệp, ứng dụng di động cho đến hệ thống nhúng.</p>
+
+                <h3>1. Vì sao nên học Java?</h3>
+                <p>Java không chỉ phổ biến mà còn là một trong những ngôn ngữ có cộng đồng lớn và đáng tin cậy nhất. Ưu điểm nổi bật của Java nằm ở khẩu hiệu “<strong>Write Once, Run Anywhere</strong>” – viết một lần, chạy ở mọi nơi. Chương trình Java được biên dịch ra <em>bytecode</em> và thực thi trên <strong>Java Virtual Machine (JVM)</strong>, giúp mã của bạn có thể chạy trên Windows, Linux, macOS, và thậm chí cả Android.</p>
+
+                <p>Bên cạnh đó, Java được dùng trong rất nhiều lĩnh vực:</p>
+                <ul>
+                    <li>Phát triển <strong>ứng dụng doanh nghiệp (Enterprise Application)</strong> với Spring Framework, Java EE.</li>
+                    <li>Xây dựng <strong>ứng dụng Android</strong> (kết hợp với Kotlin).</li>
+                    <li>Lập trình <strong>ứng dụng Desktop</strong> bằng JavaFX hoặc Swing.</li>
+                    <li>Xây dựng <strong>phần mềm nhúng</strong> và hệ thống backend quy mô lớn.</li>
+                </ul>
+
+                <h3>2. Cấu trúc cơ bản của một chương trình Java</h3>
+                <p>Một chương trình Java cơ bản gồm lớp (class), phương thức (method) và hàm <code>main()</code> – nơi chương trình bắt đầu thực thi. Ví dụ:</p>
+
+                <pre><code class="language-java">
+public class HelloWorld {
+    public static void main(String[] args) {
+        System.out.println("Xin chào, Java!");
+    }
+}
+                </code></pre>
+
+                <p>Khi chạy chương trình, JVM sẽ gọi phương thức <code>main()</code>. Câu lệnh <code>System.out.println()</code> dùng để in nội dung ra màn hình console.</p>
+
+                <h3>3. Các thành phần cơ bản trong Java</h3>
+                <p>Để làm chủ Java, bạn cần nắm vững các thành phần cơ bản sau:</p>
+
+                <ul>
+                    <li><strong>Biến (Variable):</strong> Dùng để lưu trữ dữ liệu tạm thời.</li>
+                    <li><strong>Kiểu dữ liệu (Data Types):</strong> Bao gồm kiểu nguyên thủy (<code>int</code>, <code>float</code>, <code>boolean</code>, ...) và kiểu đối tượng (<code>String</code>, <code>ArrayList</code>, ...).</li>
+                    <li><strong>Cấu trúc điều khiển:</strong> Gồm <code>if</code>, <code>for</code>, <code>while</code>, <code>switch</code> giúp xử lý logic.</li>
+                    <li><strong>Phương thức (Method):</strong> Giúp chia nhỏ chương trình thành các khối chức năng riêng biệt.</li>
+                </ul>
+
+                <pre><code class="language-java">
+int age = 20;
+if (age >= 18) {
+    System.out.println("Bạn đủ tuổi trưởng thành.");
+} else {
+    System.out.println("Bạn chưa đủ 18 tuổi.");
+}
+                </code></pre>
+
+                <h3>4. Lập trình hướng đối tượng (OOP) trong Java</h3>
+                <p>Java là ngôn ngữ lập trình hướng đối tượng thuần túy. Bốn đặc trưng chính của OOP bao gồm:</p>
+                <ul>
+                    <li><strong>Encapsulation</strong> – Đóng gói dữ liệu và phương thức trong cùng một lớp.</li>
+                    <li><strong>Inheritance</strong> – Kế thừa đặc tính từ lớp cha.</li>
+                    <li><strong>Polymorphism</strong> – Đa hình, cùng một phương thức có thể hoạt động khác nhau tùy đối tượng.</li>
+                    <li><strong>Abstraction</strong> – Trừu tượng hóa, ẩn đi chi tiết cài đặt.</li>
+                </ul>
+
+                <pre><code class="language-java">
+class Animal {
+    void sound() {
+        System.out.println("Động vật phát ra âm thanh");
+    }
+}
+
+class Dog extends Animal {
+    void sound() {
+        System.out.println("Gâu gâu!");
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        Animal myDog = new Dog();
+        myDog.sound(); // Kết quả: Gâu gâu!
+    }
+}
+                </code></pre>
+
+                <h3>5. Quản lý bộ nhớ và Garbage Collector</h3>
+                <p>Khác với C/C++, Java quản lý bộ nhớ tự động thông qua <strong>Garbage Collector (GC)</strong>. GC sẽ dọn dẹp các đối tượng không còn được tham chiếu, giúp lập trình viên tập trung vào logic thay vì quản lý bộ nhớ thủ công.</p>
+
+                <p>Tuy nhiên, bạn vẫn nên hiểu cách bộ nhớ hoạt động trong Java để tránh rò rỉ bộ nhớ (memory leak), đặc biệt khi dùng các cấu trúc như <code>HashMap</code> hoặc <code>ThreadLocal</code>.</p>
+
+                <h3>6. Thư viện và Framework phổ biến</h3>
+                <p>Hệ sinh thái Java cực kỳ phong phú. Một số công nghệ phổ biến bạn nên biết:</p>
+                <ul>
+                    <li><strong>Spring Boot</strong> – Phát triển ứng dụng web và API nhanh chóng.</li>
+                    <li><strong>Hibernate</strong> – ORM giúp thao tác với cơ sở dữ liệu dễ dàng.</li>
+                    <li><strong>Maven / Gradle</strong> – Quản lý dependencies và build project.</li>
+                    <li><strong>JUnit</strong> – Viết và kiểm thử tự động (Unit Test).</li>
+                </ul>
+
+                <h3>7. Hướng phát triển khi học Java</h3>
+                <p>Khi đã nắm vững Java cơ bản, bạn có thể lựa chọn hướng chuyên sâu như:</p>
+                <ul>
+                    <li><strong>Backend Developer:</strong> Làm việc với Spring Boot, RESTful API, cơ sở dữ liệu.</li>
+                    <li><strong>Android Developer:</strong> Xây dựng ứng dụng di động với Java/Kotlin.</li>
+                    <li><strong>Fullstack Developer:</strong> Kết hợp Java với JavaScript (React, Angular,...).</li>
+                    <li><strong>Data Engineer:</strong> Dùng Java cho xử lý dữ liệu lớn (Hadoop, Spark).</li>
+                </ul>
+
+                <h3>8. Lời khuyên cho người mới học</h3>
+                <p>Đừng cố học quá nhanh. Hãy bắt đầu với cú pháp, thực hành qua từng ví dụ nhỏ, rồi xây dựng các mini-project. Một số lời khuyên hữu ích:</p>
+                <ul>
+                    <li>Viết lại code mẫu nhiều lần để ghi nhớ cú pháp.</li>
+                    <li>Đọc tài liệu chính thức tại <a href="https://docs.oracle.com/javase/">docs.oracle.com</a>.</li>
+                    <li>Tập trung hiểu sâu thay vì học thuộc lòng.</li>
+                    <li>Dùng IDE như <strong>IntelliJ IDEA</strong> hoặc <strong>VS Code</strong> để lập trình hiệu quả.</li>
+                </ul>
+
+                <p>Khi đã hiểu rõ nền tảng, bạn sẽ thấy Java không hề “khó nhằn” mà là một công cụ mạnh mẽ giúp mở ra nhiều cơ hội nghề nghiệp trong ngành công nghệ phần mềm.</p>
+            </div>
+
+            <div class="text-center" style="margin-top: 20px;">
+                <a href="index.html#blog" class="blog-card-link"><i class="ti-angle-double-left"></i> Quay lại Blog</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <div class="container">
+        <footer class="footer">
+            <p class="mb-0">Bản quyền &copy; <script>document.write(new Date().getFullYear())</script> 
+                <a href="index.html">Trần Tiến</a></p>
+            <div class="social-links text-right m-auto ml-sm-auto">
+                <a href="https://facebook.com/" class="link"><i class="ti-facebook"></i></a>
+                <a href="https://instagram.com/" class="link"><i class="ti-instagram"></i></a>
+                <a href="https://twitter.com/" class="link"><i class="ti-twitter-alt"></i></a>
+            </div>
+        </footer>
+    </div>
+
+    <!-- JS -->
+    <script src="assets/vendors/jquery/jquery-3.4.1.js"></script>
+    <script src="assets/vendors/bootstrap/bootstrap.bundle.js"></script>
+    <script src="assets/vendors/bootstrap/bootstrap.affix.js"></script>
+    <script src="assets/js/meyawo.js"></script>
+</body>
+</html>

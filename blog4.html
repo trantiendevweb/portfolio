@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="Bài viết chi tiết về triết lý component và khả năng tái sử dụng của ReactJS, chia sẻ kinh nghiệm học và thực hành tại HUTECH.">
+    <meta name="author" content="Trần Tiến">
+    <title>ReactJS: Tư duy thành phần và sức mạnh tái sử dụng | Trần Tiến</title>
+    <link rel="stylesheet" href="assets/vendors/themify-icons/css/themify-icons.css">
+    <link rel="stylesheet" href="assets/css/meyawo.css">
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="custom-navbar" data-spy="affix" data-offset-top="20">
+        <div class="container">
+            <a class="logo" href="index.html">Trần Tiến</a>
+            <ul class="nav">
+                <li class="item"><a class="link" href="index.html#home">Trang chủ</a></li>
+                <li class="item"><a class="link" href="index.html#portfolio">Dự án</a></li>
+                <li class="item"><a class="link" href="index.html#blog">Blog</a></li>
+            </ul>
+            <a href="javascript:void(0)" id="nav-toggle" class="hamburger hamburger--elastic">
+                <div class="hamburger-box"><div class="hamburger-inner"></div></div>
+            </a>
+        </div>
+    </nav>
+
+    <!-- Blog Content -->
+    <section class="section">
+        <div class="container">
+            <h1 class="section-title text-center">ReactJS: Tư duy thành phần và sức mạnh tái sử dụng</h1>
+            <p class="text-center">
+                <a href="#">Tác giả: Trần Tiến</a> | 
+                <i class="ti-heart text-danger"></i> 187 | 
+                <i class="ti-comment"></i> 42
+            </p>
+
+            <div class="text-center">
+                <img src="assets/imgs/blog4.png" class="blog-card-img" alt="ReactJS" style="max-width: 100%; height: auto;">
+            </div>
+
+            <div class="blog-content" style="text-align: left; margin-top: 20px;">
+
+                <p>ReactJS không chỉ là một thư viện JavaScript thông thường – nó là một cách tư duy hoàn toàn mới về việc xây dựng giao diện người dùng. Thay vì xem website là một tập hợp những trang HTML tĩnh, React khiến mình nhận ra: mọi phần của giao diện đều có thể được chia nhỏ thành các thành phần độc lập (component), có thể tái sử dụng và quản lý dễ dàng.</p>
+
+                <h3>1. Bắt đầu hành trình với React tại HUTECH</h3>
+                <p>Trong khóa học tại HUTECH, mình bắt đầu tiếp cận ReactJS sau khi đã quen với HTML, CSS và JavaScript thuần. Ban đầu, mọi thứ khá lạ lẫm — JSX nhìn giống HTML nhưng lại là JavaScript, khái niệm <code>state</code> và <code>props</code> khiến mình mất kha khá thời gian để hiểu. Nhưng khi mình tạo được component đầu tiên, cảm giác “wow” thật sự xuất hiện.</p>
+                <p>Mình bắt đầu chia từng phần nhỏ trong dự án ra thành component: thanh điều hướng (<code>Navbar</code>), phần banner chính (<code>HeroSection</code>), danh sách sản phẩm (<code>ProductList</code>), hay form đăng ký. Mỗi component có chức năng riêng, và có thể kết hợp linh hoạt với nhau. Khi cần chỉnh sửa, mình chỉ sửa đúng component đó mà không làm ảnh hưởng đến phần còn lại của trang.</p>
+
+                <h3>2. Tư duy thành phần – nền tảng của React</h3>
+                <p>Điều khiến React trở nên đặc biệt chính là triết lý “tư duy theo thành phần” (component-based thinking). Thay vì nhìn một trang web như một khối nguyên khối, mình học cách tách nó thành những mảnh ghép nhỏ, mỗi mảnh có logic và giao diện riêng. Nhờ đó, code trở nên rõ ràng hơn, dễ đọc hơn, và dễ mở rộng hơn rất nhiều.</p>
+                <p>Ví dụ, trong một dự án thương mại điện tử, phần hiển thị sản phẩm và phần giỏ hàng có thể là hai component riêng biệt. Nhưng cả hai đều có thể sử dụng lại cùng một component “Button” với kiểu dáng nhất quán. Việc tái sử dụng này giúp tiết kiệm thời gian và đảm bảo tính thống nhất trong thiết kế.</p>
+
+                <h3>3. Quản lý trạng thái và dữ liệu trong React</h3>
+                <p>Trước khi học React, mình từng vật lộn với việc làm sao để dữ liệu hiển thị đúng trên giao diện khi người dùng thao tác. React giúp mình giải quyết vấn đề đó thông qua cơ chế <code>state</code>. Mỗi khi người dùng nhập dữ liệu, nhấn nút, hoặc chuyển tab, state sẽ thay đổi và giao diện được cập nhật ngay lập tức – không cần tải lại trang.</p>
+                <p>Để quản lý state phức tạp hơn, mình học thêm về <code>Context API</code> và sau đó là <code>Redux</code>. Lúc này, mình hiểu rằng: React không chỉ giúp làm giao diện đẹp hơn, mà còn dạy mình cách tổ chức luồng dữ liệu hợp lý – điều cốt lõi của mọi ứng dụng hiện đại.</p>
+
+                <h3>4. Tái sử dụng và mở rộng – Sức mạnh thực sự của React</h3>
+                <p>Điều khiến mình ấn tượng nhất ở React chính là khả năng tái sử dụng. Một component có thể dùng ở nhiều nơi khác nhau chỉ với vài dòng code. Khi làm đồ án tốt nghiệp, mình đã tạo ra một thư viện component riêng — bao gồm button, modal, card và input form — có thể sử dụng lại cho nhiều dự án khác nhau.</p>
+                <p>Không chỉ giúp tiết kiệm thời gian, điều này còn giúp mình học cách viết code “sạch” và có cấu trúc. Mình nhận ra rằng mỗi component không chỉ là phần giao diện, mà còn là “đơn vị logic” – có thể mở rộng, nâng cấp và chia sẻ giữa các lập trình viên trong nhóm.</p>
+
+                <h3>5. React Hook – Khi React trở nên linh hoạt hơn</h3>
+                <p>Khi mình bắt đầu học về <code>React Hooks</code> như <code>useState</code>, <code>useEffect</code> hay <code>useRef</code>, mọi thứ càng trở nên dễ hiểu hơn. Hooks giúp loại bỏ sự phức tạp của class component, đồng thời mở ra cách viết component ngắn gọn và dễ đọc hơn.</p>
+                <p>Ví dụ, với <code>useEffect</code>, mình có thể xử lý side-effect như gọi API hoặc đồng bộ dữ liệu với LocalStorage chỉ trong vài dòng code. Việc này khiến code dễ kiểm soát hơn nhiều so với trước đây.</p>
+
+                <h3>6. React không chỉ là code – mà là tư duy thiết kế</h3>
+                <p>Khi đã quen với React, mình bắt đầu nhìn mọi giao diện web bằng con mắt khác. Mỗi phần tử không chỉ là “nội dung” mà là một “thành phần”. Điều này giúp mình phát triển khả năng tư duy thiết kế có hệ thống, hiểu rõ cách người dùng tương tác với giao diện, và tối ưu trải nghiệm cho họ.</p>
+                <p>Học React dạy mình rằng: lập trình frontend không chỉ là viết code chạy được, mà là tạo ra sản phẩm dễ dùng, dễ mở rộng và có thể phát triển lâu dài.</p>
+
+                <h3>7. Kết luận: React và hành trình không có điểm dừng</h3>
+                <p>ReactJS đã mở ra cho mình một cánh cửa mới đến thế giới frontend hiện đại. Mình học được cách chia nhỏ vấn đề, tổ chức mã nguồn gọn gàng, và tạo ra sản phẩm có thể phát triển cùng thời gian. Dù hiện tại có nhiều framework khác như Vue hay Svelte, nhưng React vẫn luôn là nền tảng vững chắc mà mình tin tưởng.</p>
+                <p>Với mình, React không chỉ là công cụ lập trình – nó là một hành trình thay đổi tư duy, giúp mình trở thành một lập trình viên tốt hơn từng ngày.</p>
+            </div>
+
+            <div class="text-center" style="margin-top: 30px;">
+                <a href="index.html#blog" class="blog-card-link"><i class="ti-angle-double-left"></i> Quay lại Blog</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <div class="container">
+        <footer class="footer">
+            <p class="mb-0">Bản quyền &copy; <script>document.write(new Date().getFullYear())</script> <a href="index.html">Trần Tiến</a></p>
+            <div class="social-links text-right m-auto ml-sm-auto">
+                <a href="#" class="link"><i class="ti-facebook"></i></a>
+                <a href="#" class="link"><i class="ti-instagram"></i></a>
+                <a href="#" class="link"><i class="ti-twitter-alt"></i></a>
+            </div>
+        </footer>
+    </div>
+
+    <!-- JS -->
+    <script src="assets/vendors/jquery/jquery-3.4.1.js"></script>
+    <script src="assets/vendors/bootstrap/bootstrap.bundle.js"></script>
+    <script src="assets/vendors/bootstrap/bootstrap.affix.js"></script>
+    <script src="assets/js/meyawo.js"></script>
+</body>
+</html>

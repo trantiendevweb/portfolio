@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="Tìm hiểu chi tiết về Lập trình Hướng đối tượng (OOP) trong Java: nguyên lý, ví dụ minh họa và cách áp dụng thực tế.">
+    <meta name="author" content="Trần Tiến">
+    <title>Hiểu sâu về Lập trình Hướng đối tượng (OOP) | Trần Tiến</title>
+    <link rel="stylesheet" href="assets/vendors/themify-icons/css/themify-icons.css">
+    <link rel="stylesheet" href="assets/css/meyawo.css">
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="custom-navbar" data-spy="affix" data-offset-top="20">
+        <div class="container">
+            <a class="logo" href="index.html">Trần Tiến</a>
+            <ul class="nav">
+                <li class="item"><a class="link" href="index.html#home">Trang chủ</a></li>
+                <li class="item"><a class="link" href="index.html#portfolio">Dự án</a></li>
+                <li class="item"><a class="link" href="index.html#blog">Blog</a></li>
+            </ul>
+            <a href="javascript:void(0)" id="nav-toggle" class="hamburger hamburger--elastic">
+                <div class="hamburger-box"><div class="hamburger-inner"></div></div>
+            </a>
+        </div>
+    </nav>
+
+    <!-- Blog Content -->
+    <section class="section">
+        <div class="container">
+            <h1 class="section-title text-center">Hiểu sâu về Lập trình Hướng đối tượng (OOP)</h1>
+            <p class="text-center">
+                <a href="#">Tác giả: Trần Tiến</a> | 
+                <i class="ti-heart text-danger"></i> 134 | 
+                <i class="ti-comment"></i> 47
+            </p>
+
+            <div class="text-center">
+                <img src="assets/imgs/blog2.jpg" class="blog-card-img" alt="OOP" style="max-width: 100%; height: auto;">
+            </div>
+
+            <div class="blog-content" style="text-align: left; margin-top: 20px;">
+                <p>Lập trình Hướng đối tượng (Object-Oriented Programming - OOP) là một trong những tư tưởng cốt lõi trong ngành phần mềm hiện đại. Thay vì chỉ tập trung vào việc viết hàm và quy trình, OOP cho phép chúng ta mô hình hóa thế giới thực thành các “đối tượng” có thuộc tính (data) và hành vi (methods).</p>
+
+                <h3>1. OOP là gì?</h3>
+                <p>OOP không chỉ là một kỹ thuật lập trình, mà còn là một cách tư duy trong việc thiết kế phần mềm. Mỗi đối tượng trong chương trình có thể hiểu như một “thực thể” riêng biệt — ví dụ: một chiếc xe, một người dùng, hay một tài khoản ngân hàng.</p>
+                <p>Mỗi đối tượng có thể:</p>
+                <ul>
+                    <li><strong>Giữ dữ liệu</strong> (thuộc tính - attributes)</li>
+                    <li><strong>Thực hiện hành động</strong> (phương thức - methods)</li>
+                </ul>
+
+                <h3>2. Bốn nguyên lý cơ bản của OOP</h3>
+                <p>Có bốn nguyên lý nền tảng giúp lập trình hướng đối tượng trở nên mạnh mẽ và dễ mở rộng: <strong>Đóng gói (Encapsulation)</strong>, <strong>Kế thừa (Inheritance)</strong>, <strong>Đa hình (Polymorphism)</strong> và <strong>Trừu tượng (Abstraction)</strong>.</p>
+
+                <h4>🔹 2.1. Đóng gói (Encapsulation)</h4>
+                <p>Đóng gói nghĩa là che giấu dữ liệu bên trong đối tượng, chỉ cho phép truy cập thông qua các phương thức công khai. Điều này giúp bảo vệ dữ liệu khỏi việc bị sửa đổi ngoài ý muốn.</p>
+                <pre><code>class Nguoi {
+    private String ten;
+    private int tuoi;
+
+    public void setTen(String ten) {
+        this.ten = ten;
+    }
+
+    public String getTen() {
+        return ten;
+    }
+}</code></pre>
+                <p>Ở đây, biến <code>ten</code> được ẩn đi, và chỉ có thể truy cập qua phương thức <code>getTen()</code> hoặc <code>setTen()</code>. Đây là một trong những cơ chế bảo mật dữ liệu quan trọng của OOP.</p>
+
+                <h4>🔹 2.2. Kế thừa (Inheritance)</h4>
+                <p>Kế thừa cho phép lớp con (subclass) sử dụng lại thuộc tính và phương thức của lớp cha (superclass), giúp giảm trùng lặp code và dễ mở rộng hệ thống.</p>
+                <pre><code>class DongVat {
+    void an() { System.out.println("Động vật ăn..."); }
+}
+
+class Cho extends DongVat {
+    void sua() { System.out.println("Chó sủa gâu gâu"); }
+}</code></pre>
+                <p>Lớp <code>Cho</code> kế thừa từ <code>DongVat</code> nên có thể gọi phương thức <code>an()</code> mà không cần viết lại.</p>
+
+                <h4>🔹 2.3. Đa hình (Polymorphism)</h4>
+                <p>Đa hình cho phép một đối tượng có thể mang nhiều “dạng” khác nhau, giúp chương trình trở nên linh hoạt và dễ mở rộng.</p>
+                <pre><code>DongVat d = new Cho();
+d.an(); // Gọi phương thức an() của lớp Cho (nếu override)</code></pre>
+                <p>Khi lớp con ghi đè phương thức của lớp cha, chương trình sẽ tự động chọn phiên bản phù hợp tại thời điểm chạy (runtime).</p>
+
+                <h4>🔹 2.4. Trừu tượng (Abstraction)</h4>
+                <p>Trừu tượng giúp ẩn đi các chi tiết không cần thiết và chỉ cung cấp những gì cần thiết cho người sử dụng. Nó được thực hiện thông qua <code>abstract class</code> hoặc <code>interface</code>.</p>
+                <pre><code>abstract class HinhHoc {
+    abstract double tinhDienTich();
+}
+
+class HinhTron extends HinhHoc {
+    double banKinh;
+
+    HinhTron(double r) { banKinh = r; }
+
+    double tinhDienTich() {
+        return Math.PI * banKinh * banKinh;
+    }
+}</code></pre>
+
+                <h3>3. Vì sao OOP lại quan trọng?</h3>
+                <ul>
+                    <li>✅ Giúp **dễ bảo trì** và **tái sử dụng** mã nguồn.</li>
+                    <li>✅ Giúp **mở rộng hệ thống dễ dàng** khi yêu cầu thay đổi.</li>
+                    <li>✅ Giúp **tư duy mô hình hóa thực tế**, gần gũi với đời sống hơn.</li>
+                    <li>✅ Là nền tảng của các framework lớn như Spring, .NET, Angular, v.v...</li>
+                </ul>
+
+                <h3>4. Lỗi thường gặp khi học OOP</h3>
+                <p>Nhiều lập trình viên mới thường mắc sai lầm khi:</p>
+                <ul>
+                    <li>👉 Quá lạm dụng kế thừa, khiến cấu trúc trở nên rối rắm.</li>
+                    <li>👉 Không tuân theo nguyên tắc <em>Single Responsibility</em>.</li>
+                    <li>👉 Biến lớp thành “God Class” – chứa quá nhiều trách nhiệm.</li>
+                </ul>
+
+                <h3>5. Kết luận</h3>
+                <p>OOP không chỉ giúp bạn viết phần mềm gọn gàng hơn, mà còn giúp bạn “nghĩ như một kỹ sư phần mềm” – có khả năng trừu tượng hóa, phân tích và mô hình hóa vấn đề.</p>
+                <p>Khi đã nắm vững OOP, bạn sẽ thấy rằng hầu hết các ngôn ngữ lập trình hiện đại (Java, C#, Python, JavaScript...) đều dựa trên nền tảng này.</p>
+                <p><strong>Hãy luyện tập tư duy hướng đối tượng mỗi ngày</strong> – vì đó chính là nền móng cho mọi kỹ năng lập trình nâng cao sau này.</p>
+            </div>
+
+            <div class="text-center" style="margin-top: 30px;">
+                <a href="index.html#blog" class="blog-card-link"><i class="ti-angle-double-left"></i> Quay lại Blog</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <div class="container">
+        <footer class="footer">
+            <p class="mb-0">Bản quyền &copy; <script>document.write(new Date().getFullYear())</script> <a href="index.html">Trần Tiến</a></p>
+            <div class="social-links text-right m-auto ml-sm-auto">
+                <a href="https://www.facebook.com/47.dang.phuoc/" class="link"><i class="ti-facebook"></i></a>
+                <a href="https://github.com/phuoc47" class="link"><i class="ti-github"></i></a>
+            </div>
+        </footer>
+    </div>
+
+    <!-- JS -->
+    <script src="assets/vendors/jquery/jquery-3.4.1.js"></script>
+    <script src="assets/vendors/bootstrap/bootstrap.bundle.js"></script>
+    <script src="assets/vendors/bootstrap/bootstrap.affix.js"></script>
+    <script src="assets/js/meyawo.js"></script>
+</body>
+</html>

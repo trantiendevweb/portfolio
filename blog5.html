@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="Bài viết chi tiết về cách TailwindCSS giúp xây dựng giao diện hiện đại, nhanh và linh hoạt hơn.">
+    <meta name="author" content="Trần Tiến">
+    <title>TailwindCSS: Viết CSS theo cách hiện đại | Trần Tiến</title>
+    <link rel="stylesheet" href="assets/vendors/themify-icons/css/themify-icons.css">
+    <link rel="stylesheet" href="assets/css/meyawo.css">
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="custom-navbar" data-spy="affix" data-offset-top="20">
+        <div class="container">
+            <a class="logo" href="index.html">Trần Tiến</a>
+            <ul class="nav">
+                <li class="item"><a class="link" href="index.html#home">Trang chủ</a></li>
+                <li class="item"><a class="link" href="index.html#portfolio">Dự án</a></li>
+                <li class="item"><a class="link" href="index.html#blog">Blog</a></li>
+            </ul>
+            <a href="javascript:void(0)" id="nav-toggle" class="hamburger hamburger--elastic">
+                <div class="hamburger-box"><div class="hamburger-inner"></div></div>
+            </a>
+        </div>
+    </nav>
+
+    <!-- Blog Content -->
+    <section class="section">
+        <div class="container">
+            <h1 class="section-title text-center">TailwindCSS: Viết CSS theo cách hiện đại</h1>
+            <p class="text-center">
+                <a href="#">Tác giả: Trần Tiến</a> | 
+                <i class="ti-heart text-danger"></i> 201 | 
+                <i class="ti-comment"></i> 35
+            </p>
+
+            <div class="text-center">
+                <img src="assets/imgs/blog5.png" class="blog-card-img" alt="TailwindCSS" style="max-width: 100%; height: auto;">
+            </div>
+
+            <div class="blog-content" style="text-align: left; margin-top: 20px;">
+
+                <p>Từ khi biết đến <strong>TailwindCSS</strong>, mình nhận ra việc viết giao diện web đã bước sang một “thời đại mới” – nơi mà CSS không còn là chuỗi file dài dằng dặc với hàng trăm dòng code trùng lặp. Tailwind giúp mình viết CSS trực tiếp ngay trong HTML, nhanh gọn và cực kỳ trực quan.</p>
+
+                <h3>1. Tailwind là gì và tại sao nó khác biệt?</h3>
+                <p>TailwindCSS là một <strong>CSS framework theo triết lý utility-first</strong>. Thay vì tạo ra các class như <code>.btn-primary</code> hay <code>.header-title</code>, Tailwind cung cấp hàng trăm class nhỏ – mỗi class đảm nhận một nhiệm vụ duy nhất, ví dụ như <code>text-center</code>, <code>bg-blue-500</code>, <code>p-4</code>, hay <code>rounded-xl</code>.</p>
+                <p>Nghe qua có vẻ rối rắm, nhưng thực ra đây là cách giúp lập trình viên <strong>kiểm soát trực tiếp giao diện ngay trong HTML</strong> mà không cần chuyển qua lại giữa file .html và .css. Bạn nhìn code là biết ngay phần tử trông ra sao, rất trực quan.</p>
+
+                <h3>2. Trải nghiệm đầu tiên của mình với Tailwind</h3>
+                <p>Ban đầu, mình khá nghi ngờ. Mình nghĩ: “Viết cả đống class như thế này thì còn rối hơn viết CSS thuần chứ?”. Nhưng khi bắt tay vào thử, cảm giác thật khác. Mình tạo một thẻ <code>&lt;div&gt;</code> với vài class:</p>
+
+                <pre><code>&lt;div class="flex justify-center items-center h-screen bg-gray-100"&gt; 
+  &lt;h1 class="text-4xl font-bold text-blue-600"&gt;Hello Tailwind!&lt;/h1&gt;
+&lt;/div&gt;</code></pre>
+
+                <p>Và chỉ vài giây sau, giao diện đã hoàn chỉnh, cân đối, và có cảm giác “chuẩn chỉnh” mà không cần viết thêm dòng CSS nào. Mọi thứ trở nên nhanh và thú vị một cách đáng ngạc nhiên.</p>
+
+                <h3>3. Lợi ích lớn nhất: tốc độ và sự đồng nhất</h3>
+                <p>Điều mình thích nhất ở Tailwind chính là <strong>tốc độ triển khai</strong>. Khi làm project nhóm tại HUTECH, việc style từng component thường mất rất nhiều thời gian. Nhưng với Tailwind, chỉ cần một quy ước chung và vài class tiện ích, tất cả thành viên đều có thể tạo giao diện nhất quán mà không cần file CSS riêng.</p>
+                <p>Không chỉ nhanh, mà giao diện còn <strong>đồng nhất tuyệt đối</strong>. Các màu sắc, khoảng cách, viền bo, bóng đổ… đều theo cùng một hệ thống thiết kế (Design System) được định nghĩa sẵn trong file cấu hình <code>tailwind.config.js</code>.</p>
+
+                <h3>4. Hiểu đúng về triết lý Utility-first</h3>
+                <p>Triết lý “utility-first” không chỉ là viết class ngắn, mà là cách tổ chức giao diện theo <strong>mẫu hình chức năng</strong> thay vì tên gọi. Thay vì đặt tên “hero-banner” hay “login-card”, ta mô tả trực tiếp phần tử bằng các thuộc tính CSS cần thiết. Ví dụ:</p>
+
+                <pre><code>&lt;div class="bg-white shadow-lg rounded-xl p-6 max-w-md mx-auto"&gt;
+  &lt;h2 class="text-xl font-semibold mb-4"&gt;Đăng nhập&lt;/h2&gt;
+  &lt;input class="w-full border border-gray-300 p-2 rounded mb-3" placeholder="Email"&gt;
+  &lt;button class="w-full bg-blue-600 text-white py-2 rounded hover:bg-blue-700"&gt;
+    Đăng nhập
+  &lt;/button&gt;
+&lt;/div&gt;</code></pre>
+
+                <p>Nhìn vào HTML, bạn thấy rõ toàn bộ cấu trúc, bố cục, màu sắc, padding, và hiệu ứng hover — mà không cần mở thêm file CSS nào.</p>
+
+                <h3>5. Tailwind và khả năng tùy biến mạnh mẽ</h3>
+                <p>Một trong những điểm khiến mình mê Tailwind là khả năng <strong>tùy biến cực cao</strong>. Bạn có thể thay đổi màu sắc chủ đạo, font chữ, khoảng cách, hoặc tạo các class riêng cho dự án của mình trong file config. Tailwind không áp đặt phong cách – nó chỉ cung cấp nền tảng để bạn xây dựng phong cách riêng.</p>
+                <p>Trong dự án “Website giới thiệu công ty”, mình đã cấu hình màu chủ đạo của thương hiệu ngay trong Tailwind. Từ đó, chỉ cần dùng class <code>bg-primary</code> là giao diện tự động theo màu công ty, cực kỳ tiện lợi và chuyên nghiệp.</p>
+
+                <h3>6. Tailwind giúp học CSS tốt hơn</h3>
+                <p>Nhiều người nghĩ dùng Tailwind sẽ khiến mình “lười học CSS”, nhưng thực ra ngược lại. Vì mỗi class trong Tailwind đại diện cho một thuộc tính CSS, nên khi bạn dùng nhiều, bạn sẽ nhớ luôn cú pháp gốc. Chẳng hạn, dùng <code>flex</code>, <code>justify-between</code>, <code>items-center</code> giúp mình hiểu sâu hơn về Flexbox mà không cần đọc lại tài liệu nhiều.</p>
+                <p>Tailwind giống như một “bộ từ vựng” giúp ghi nhớ CSS nhanh và hiệu quả hơn thông qua thực hành.</p>
+
+                <h3>7. Kết hợp Tailwind với React và các framework khác</h3>
+                <p>Khi làm việc với React hoặc Next.js, Tailwind phát huy tối đa sức mạnh. Việc style từng component trở nên cực kỳ dễ. Mình chỉ cần thêm class trực tiếp vào JSX, không còn phải import file CSS riêng hay lo lắng về conflict giữa các class.</p>
+                <p>Đặc biệt, Tailwind hoạt động rất tốt với các UI library như <strong>Headless UI</strong> hoặc <strong>Framer Motion</strong>, giúp tạo hiệu ứng động và modal chuyên nghiệp mà không cần viết CSS phức tạp.</p>
+
+                <h3>8. Kết luận: CSS hiện đại không còn “rườm rà”</h3>
+                <p>Sau khi làm quen với TailwindCSS, mình gần như không thể quay lại cách viết CSS truyền thống nữa. Mình làm việc nhanh hơn, code gọn hơn, và sản phẩm nhất quán hơn rất nhiều. Tailwind không chỉ là một công cụ – nó là <strong>một cách tư duy mới</strong> về thiết kế giao diện web: đơn giản, rõ ràng, và có thể mở rộng.</p>
+                <p>Với mình, Tailwind không chỉ giúp tiết kiệm thời gian, mà còn giúp học cách nhìn CSS theo hướng logic – nơi mỗi class là một viên gạch nhỏ xây nên cả công trình giao diện.</p>
+
+            </div>
+
+            <div class="text-center" style="margin-top: 30px;">
+                <a href="index.html#blog" class="blog-card-link"><i class="ti-angle-double-left"></i> Quay lại Blog</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <div class="container">
+        <footer class="footer">
+            <p class="mb-0">Bản quyền &copy; <script>document.write(new Date().getFullYear())</script> <a href="index.html">Trần Tiến</a></p>
+            <div class="social-links text-right m-auto ml-sm-auto">
+                <a href="#" class="link"><i class="ti-facebook"></i></a>
+                <a href="#" class="link"><i class="ti-instagram"></i></a>
+                <a href="#" class="link"><i class="ti-twitter-alt"></i></a>
+            </div>
+        </footer>
+    </div>
+
+    <!-- JS -->
+    <script src="assets/vendors/jquery/jquery-3.4.1.js"></script>
+    <script src="assets/vendors/bootstrap/bootstrap.bundle.js"></script>
+    <script src="assets/vendors/bootstrap/bootstrap.affix.js"></script>
+    <script src="assets/js/meyawo.js"></script>
+</body>
+</html>

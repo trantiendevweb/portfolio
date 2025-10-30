@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="Bài viết về Hiệu năng Frontend của Trần Tiến.">
+    <meta name="author" content="Trần Tiến">
+    <title>Hiệu năng Frontend: Khi từng mili-giây đều có giá trị | Trần Tiến</title>
+    <link rel="stylesheet" href="assets/vendors/themify-icons/css/themify-icons.css">
+    <link rel="stylesheet" href="assets/css/meyawo.css">
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="custom-navbar" data-spy="affix" data-offset-top="20">
+        <div class="container">
+            <a class="logo" href="index.html">Trần Tiến</a>
+            <ul class="nav">
+                <li class="item"><a class="link" href="index.html#home">Trang chủ</a></li>
+                <li class="item"><a class="link" href="index.html#portfolio">Dự án</a></li>
+                <li class="item"><a class="link" href="index.html#blog">Blog</a></li>
+            </ul>
+            <a href="javascript:void(0)" id="nav-toggle" class="hamburger hamburger--elastic">
+                <div class="hamburger-box"><div class="hamburger-inner"></div></div>
+            </a>
+        </div>
+    </nav>
+
+    <!-- Blog Content -->
+    <section class="section">
+        <div class="container">
+            <h1 class="section-title text-center">Hiệu năng Frontend: Khi từng mili-giây đều có giá trị</h1>
+            <p class="text-center">
+                <a href="#">Tác giả: Trần Tiến</a> | 
+                <i class="ti-heart text-danger"></i> 164 | 
+                <i class="ti-comment"></i> 27
+            </p>
+            <div class="text-center">
+                <img src="assets/imgs/blog9.png" class="blog-card-img" alt="Performance" style="max-width: 100%; height: auto;">
+            </div>
+
+            <div class="blog-content" style="text-align: left; margin-top: 20px;">
+                <p>Hiệu năng frontend không chỉ là câu chuyện của tốc độ – mà là cách chúng ta tôn trọng thời gian của người dùng. Một trang web tải nhanh không chỉ khiến họ ở lại lâu hơn, mà còn tạo cảm giác tin tưởng, chuyên nghiệp và dễ chịu ngay từ giây đầu tiên.</p>
+
+                <p>Thời điểm mình bắt đầu học lập trình web, hiệu năng là thứ mình ít quan tâm nhất. Chỉ cần code chạy là đủ, miễn trang hiển thị đúng. Nhưng càng làm nhiều, mình càng nhận ra: một website đẹp mà chậm thì chẳng ai kiên nhẫn để thưởng thức nó. Chỉ cần chậm vài giây, người dùng sẵn sàng rời đi – và cơ hội cũng biến mất.</p>
+
+                <p>Khi mình bắt đầu tối ưu hiệu năng, mọi thứ giống như mở ra một thế giới mới. Mình học cách <strong>lazy load hình ảnh</strong> – chỉ tải những gì người dùng đang nhìn thấy. Mình học cách tách nhỏ file JavaScript, chỉ tải khi cần (code splitting). Mình biết đến <strong>CDN</strong>, nơi giúp phân phối nội dung đến người dùng nhanh hơn nhờ máy chủ gần họ nhất. Và rồi mình nhận ra rằng: chỉ cần giảm 200ms thời gian tải trang, trải nghiệm người dùng đã thay đổi rõ rệt.</p>
+
+                <p>Hiệu năng không phải là một đích đến, mà là một hành trình. Mỗi dự án mới lại đặt ra câu hỏi: “Liệu có thể làm nhanh hơn không?” Khi mình đo bằng Lighthouse hay Chrome DevTools, những con số như <em>First Contentful Paint</em>, <em>Largest Contentful Paint</em> hay <em>Time to Interactive</em> dần trở nên quen thuộc – và mỗi khi chúng giảm xuống, mình thấy tự hào như vừa phá kỷ lục cá nhân.</p>
+
+                <p>Để tối ưu thật sự, cần hiểu cách trình duyệt hoạt động. Khi DOM được dựng, khi CSS được tính toán, khi JavaScript block render – tất cả đều ảnh hưởng đến tốc độ. Mình bắt đầu học cách defer script, preload font, nén ảnh bằng WebP, và minify toàn bộ mã nguồn trước khi deploy. Những việc tưởng chừng nhỏ nhặt ấy, cộng lại lại giúp trang web “nhẹ đi” hàng trăm kilobyte và load nhanh hơn hẳn.</p>
+
+                <p>Nhưng điều thú vị nhất là: hiệu năng không chỉ là kỹ thuật, mà còn là tư duy. Một developer quan tâm đến hiệu năng là người luôn nghĩ đến người dùng – người hiểu rằng phía bên kia màn hình, mỗi mili-giây đều là sự kiên nhẫn được thử thách.</p>
+
+                <p>Mình từng chứng kiến một dự án thương mại điện tử mà chỉ cần tối ưu cache và giảm request không cần thiết, tỷ lệ chuyển đổi tăng 15%. Những con số nhỏ đôi khi có ý nghĩa lớn – không chỉ về tốc độ, mà về trải nghiệm và cả doanh thu.</p>
+
+                <p>Hiệu năng cũng gắn liền với sự gọn gàng trong code. Khi mình biết cách loại bỏ thư viện không cần thiết, tái sử dụng component, hay tránh re-render không đáng có trong React, code của mình trở nên “sạch” và có tổ chức hơn. Hiệu năng, về bản chất, là sự kết hợp giữa kỹ thuật, thẩm mỹ và tư duy tối giản.</p>
+
+                <p>Ngày nay, khi mở DevTools, mình không chỉ xem console có lỗi không – mình nhìn tab “Performance”, kiểm tra CPU, network, paint time… Những chi tiết nhỏ ấy khiến mình hiểu sâu hơn về cách trình duyệt xử lý mọi thứ, và điều đó giúp mình viết ra code “thông minh hơn”.</p>
+
+                <p>Có người nói rằng “người dùng không quan tâm bạn dùng framework gì, họ chỉ quan tâm web có nhanh không”. Và mình thấy câu đó đúng hơn bao giờ hết. Dù bạn dùng React, Vue, hay Svelte, thì mục tiêu cuối cùng vẫn là đem lại trải nghiệm mượt mà nhất.</p>
+
+                <p><strong>“Hiệu suất là sự tôn trọng dành cho thời gian của người dùng.”</strong> Câu nói ấy mình luôn nhớ khi làm bất kỳ dự án nào. Vì phía sau mỗi lượt click là một người thật, với thời gian thật, đang tin tưởng và trải nghiệm sản phẩm của bạn.</p>
+
+                <p>Và với mình, đó chính là lý do khiến hiệu năng không chỉ là một yếu tố kỹ thuật – mà là một giá trị nhân văn trong lập trình web hiện đại.</p>
+            </div>
+
+            <div class="text-center" style="margin-top: 20px;">
+                <a href="index.html#blog" class="blog-card-link">Quay lại Blog <i class="ti-angle-double-left"></i></a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <div class="container">
+        <footer class="footer">
+            <p class="mb-0">Bản quyền &copy; <script>document.write(new Date().getFullYear())</script> 
+                <a href="index.html">Trần Tiến</a></p>
+            <div class="social-links text-right m-auto ml-sm-auto">
+                <a href="#" class="link"><i class="ti-facebook"></i></a>
+                <a href="#" class="link"><i class="ti-instagram"></i></a>
+                <a href="#" class="link"><i class="ti-twitter-alt"></i></a>
+            </div>
+        </footer>
+    </div>
+
+    <!-- JS -->
+    <script src="assets/vendors/jquery/jquery-3.4.1.js"></script>
+    <script src="assets/vendors/bootstrap/bootstrap.bundle.js"></script>
+    <script src="assets/vendors/bootstrap/bootstrap.affix.js"></script>
+    <script src="assets/js/meyawo.js"></script>
+</body>
+</html>
